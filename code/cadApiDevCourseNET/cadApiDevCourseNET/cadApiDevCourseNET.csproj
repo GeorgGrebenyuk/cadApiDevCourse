@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <Nullable>enable</Nullable>
+	  <LangVersion>9.0</LangVersion>
+	  <Configurations>D_Nc22;D_Nc26;R_Nc22;R_Nc26;D_Ac2022;D_Ac2025;R_Ac2022;R_Ac2025;</Configurations>
+	  <OutDir>$(SolitionDir)bin\$(Configuration)</OutDir>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <UseWPF>true</UseWPF>
+	  <CopyRefAssembliesToPublishDirectory>true</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'D_Nc22' or '$(Configuration)' == 'D_Nc26' or '$(Configuration)' == 'R_Nc22' or '$(Configuration)' == 'R_Nc26'">
+		<DefineConstants>NCAD</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'D_Ac2022' or '$(Configuration)' == 'D_Ac2025' or '$(Configuration)' == 'R_Ac2022' or '$(Configuration)' == 'R_Ac2025'">
+		<DefineConstants>ACAD</DefineConstants>
+	</PropertyGroup>
+
+	<Choose>
+		<When Condition="'$(Configuration)' == 'D_Nc22' or '$(Configuration)' == 'R_Nc22'">
+			<PropertyGroup>
+				<TargetFramework>net48</TargetFramework>
+			</PropertyGroup>
+			<ItemGroup>
+				<PackageReference Include="nanoCAD.Platform.NET" Version="22.0.6013.3747">
+					<ExcludeAssets>runtime</ExcludeAssets>
+				</PackageReference>
+				<PackageReference Include="System.Text.Json" Version="10.0.3">
+				</PackageReference>
+				<COMReference Include="nanoCAD">
+					<WrapperTool>tlbimp</WrapperTool>
+					<VersionMinor>0</VersionMinor>
+					<VersionMajor>26</VersionMajor>
+					<Guid>395698a5-0e94-4f96-a777-87ae94b834e4</Guid>
+					<Lcid>0</Lcid>
+					<Isolated>false</Isolated>
+					<EmbedInteropTypes>true</EmbedInteropTypes>
+				</COMReference>
+				<COMReference Include="OdaX">
+					<WrapperTool>tlbimp</WrapperTool>
+					<VersionMinor>8</VersionMinor>
+					<VersionMajor>24</VersionMajor>
+					<Guid>0dfa2554-8a2b-44d0-be8f-85eeb803aee9</Guid>
+					<Lcid>0</Lcid>
+					<Isolated>false</Isolated>
+					<EmbedInteropTypes>true</EmbedInteropTypes>
+				</COMReference>
+			</ItemGroup>
+		</When>
+		<When Condition="'$(Configuration)' == 'D_Nc26' or '$(Configuration)' == 'R_Nc26'">
+			<PropertyGroup>
+				<TargetFramework>net6.0-windows</TargetFramework>
+			</PropertyGroup>
+			<ItemGroup>
+				<PackageReference Include="nanoCAD.Platform.NET" Version="26.0.7226.4926">
+					<ExcludeAssets>runtime</ExcludeAssets>
+				</PackageReference>
+				<COMReference Include="nanoCAD">
+					<WrapperTool>tlbimp</WrapperTool>
+					<VersionMinor>0</VersionMinor>
+					<VersionMajor>26</VersionMajor>
+					<Guid>395698a5-0e94-4f96-a777-87ae94b834e4</Guid>
+					<Lcid>0</Lcid>
+					<Isolated>false</Isolated>
+					<EmbedInteropTypes>true</EmbedInteropTypes>
+				</COMReference>
+				<COMReference Include="OdaX">
+					<WrapperTool>tlbimp</WrapperTool>
+					<VersionMinor>8</VersionMinor>
+					<VersionMajor>24</VersionMajor>
+					<Guid>0dfa2554-8a2b-44d0-be8f-85eeb803aee9</Guid>
+					<Lcid>0</Lcid>
+					<Isolated>false</Isolated>
+					<EmbedInteropTypes>true</EmbedInteropTypes>
+				</COMReference>
+			</ItemGroup>
+		</When>
+		<When Condition="'$(Configuration)' == 'D_Ac2022' or '$(Configuration)' == 'R_Ac2022'">
+			<PropertyGroup>
+				<TargetFramework>net48</TargetFramework>
+			</PropertyGroup>
+			<ItemGroup>
+				<PackageReference Include="System.Text.Json" Version="10.0.3">
+				</PackageReference>
+				<PackageReference Include="AutoCAD.NET" Version="24.1.51000">
+					<ExcludeAssets>runtime</ExcludeAssets>
+				</PackageReference>
+				<PackageReference Include="Chuongmep.Acad.Api.Autodesk.AutoCAD.Interop" Version="2024.0.1" >
+					<ExcludeAssets>runtime</ExcludeAssets>
+				</PackageReference>
+			</ItemGroup>
+		</When>
+		
+	</Choose>
+
+	<ItemGroup>
+	  
+	</ItemGroup>
+
+
+</Project>
