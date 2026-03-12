@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "building-point",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "BUILDING": "service", "ADDR_CITY": null, "A_STRT": "набережная реки Малой Невки", "A_SBRB": null, "A_HSNMBR": "7 литТ", "A_PLACE": null, "A_PSTCD": null, "B_LEVELS": "1", "NAME": null, "NAME_EN": null, "NAME_RU": null, "OSM_TYPE": "node", "OSM_ID": 9156204087 }, "geometry": { "type": "Point", "coordinates": [ 30.2998021, 59.9783401 ] } },
+{ "type": "Feature", "properties": { "BUILDING": "garage", "ADDR_CITY": null, "A_STRT": null, "A_SBRB": null, "A_HSNMBR": null, "A_PLACE": null, "A_PSTCD": null, "B_LEVELS": null, "NAME": null, "NAME_EN": null, "NAME_RU": null, "OSM_TYPE": "node", "OSM_ID": 9156204088 }, "geometry": { "type": "Point", "coordinates": [ 30.2964279, 59.9808931 ] } }
+]
+}

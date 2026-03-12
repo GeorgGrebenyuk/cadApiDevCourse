@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "public-transport-point",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "NAME": "Каменный остров", "NAME_EN": null, "NAME_RU": null, "RAILWAY": null, "HIGHWAY": "bus_stop", "REF": null, "NETWORK": null, "PUBLIC_TRA": "platform", "OSM_TYPE": "node", "OSM_ID": 541961610 }, "geometry": { "type": "Point", "coordinates": [ 30.2997556, 59.9787702 ] } },
+{ "type": "Feature", "properties": { "NAME": "Каменный остров", "NAME_EN": null, "NAME_RU": null, "RAILWAY": null, "HIGHWAY": "bus_stop", "REF": null, "NETWORK": null, "PUBLIC_TRA": "platform", "OSM_TYPE": "node", "OSM_ID": 762676544 }, "geometry": { "type": "Point", "coordinates": [ 30.3003085, 59.9787935 ] } },
+{ "type": "Feature", "properties": { "NAME": "Каменный остров", "NAME_EN": null, "NAME_RU": null, "RAILWAY": "tram_stop", "HIGHWAY": null, "REF": null, "NETWORK": null, "PUBLIC_TRA": "stop_position", "OSM_TYPE": "node", "OSM_ID": 1566643826 }, "geometry": { "type": "Point", "coordinates": [ 30.2995298, 59.9794536 ] } },
+{ "type": "Feature", "properties": { "NAME": "Каменный остров", "NAME_EN": null, "NAME_RU": null, "RAILWAY": null, "HIGHWAY": null, "REF": null, "NETWORK": null, "PUBLIC_TRA": "platform", "OSM_TYPE": "node", "OSM_ID": 1566643827 }, "geometry": { "type": "Point", "coordinates": [ 30.2996936, 59.9794834 ] } },
+{ "type": "Feature", "properties": { "NAME": "Каменный остров", "NAME_EN": null, "NAME_RU": null, "RAILWAY": "tram_stop", "HIGHWAY": null, "REF": null, "NETWORK": null, "PUBLIC_TRA": "stop_position", "OSM_TYPE": "node", "OSM_ID": 1569121479 }, "geometry": { "type": "Point", "coordinates": [ 30.2992576, 59.9803093 ] } },
+{ "type": "Feature", "properties": { "NAME": "Каменный остров", "NAME_EN": null, "NAME_RU": null, "RAILWAY": null, "HIGHWAY": null, "REF": null, "NETWORK": null, "PUBLIC_TRA": "platform", "OSM_TYPE": "node", "OSM_ID": 1569121480 }, "geometry": { "type": "Point", "coordinates": [ 30.2991003, 59.980338 ] } }
+]
+}

@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "parking-polygon",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "FEE": null, "NAME": null, "NAME_EN": null, "NAME_RU": null, "PARKING": "surface", "ACCESS": null, "CAPACITY": null, "OSM_TYPE": "way", "OSM_ID": 158255240 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 30.283828, 59.9801689 ], [ 30.2838462, 59.9801338 ], [ 30.2841485, 59.9801731 ], [ 30.2841302, 59.9802082 ], [ 30.283828, 59.9801689 ] ] ] ] } },
+{ "type": "Feature", "properties": { "FEE": "no", "NAME": null, "NAME_EN": null, "NAME_RU": null, "PARKING": "surface", "ACCESS": "customers", "CAPACITY": null, "OSM_TYPE": "way", "OSM_ID": 158255241 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 30.285182, 59.9805627 ], [ 30.2849065, 59.9805119 ], [ 30.2848588, 59.98057 ], [ 30.2847799, 59.9806634 ], [ 30.2847164, 59.9806859 ], [ 30.2847072, 59.9806984 ], [ 30.2848957, 59.980734 ], [ 30.2849602, 59.9806547 ], [ 30.285182, 59.9805627 ] ] ] ] } },
+{ "type": "Feature", "properties": { "FEE": null, "NAME": null, "NAME_EN": null, "NAME_RU": null, "PARKING": "surface", "ACCESS": null, "CAPACITY": null, "OSM_TYPE": "way", "OSM_ID": 158258343 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 30.28298, 59.978851 ], [ 30.2831559, 59.9788185 ], [ 30.2833796, 59.9790355 ], [ 30.2831883, 59.9790731 ], [ 30.28298, 59.978851 ] ] ] ] } },
+{ "type": "Feature", "properties": { "FEE": null, "NAME": null, "NAME_EN": null, "NAME_RU": null, "PARKING": "surface", "ACCESS": "private", "CAPACITY": null, "OSM_TYPE": "way", "OSM_ID": 158330620 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 30.2814927, 59.9772432 ], [ 30.2814449, 59.9771699 ], [ 30.2818216, 59.9771549 ], [ 30.2818964, 59.9772327 ], [ 30.2814927, 59.9772432 ] ] ] ] } },
+{ "type": "Feature", "properties": { "FEE": "no", "NAME": null, "NAME_EN": null, "NAME_RU": null, "PARKING": "surface", "ACCESS": "yes", "CAPACITY": null, "OSM_TYPE": "way", "OSM_ID": 1154257494 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 30.2748594, 59.9769681 ], [ 30.274696, 59.9767857 ], [ 30.274776, 59.9767678 ], [ 30.2749393, 59.9769502 ], [ 30.2748594, 59.9769681 ] ] ] ] } }
+]
+}
