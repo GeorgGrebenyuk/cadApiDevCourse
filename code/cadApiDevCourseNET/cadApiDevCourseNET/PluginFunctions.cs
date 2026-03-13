@@ -1,13 +1,21 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using cadApiDevCourseNET.UI;
+
+using System.Linq;
+using cadApiDevCourseNET.GeojsonSchema;
 #if NCAD
 using Teigha.Runtime;
 using HostMgd.ApplicationServices;
 using HostMgd.Windows;
+using HostMgd.EditorInput;
+using Teigha.DatabaseServices;
 #else
 using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.Windows;
+using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.DatabaseServices;
 #endif
 
 namespace cadApiDevCourseNET
@@ -59,6 +67,37 @@ namespace cadApiDevCourseNET
         public void command_ShowSemantic()
         {
             SemanticViewerPalette.CreatePalette();
+        }
+
+        [CommandMethod("CadDevCourse_GeojsonExport", CommandFlags.UsePickSet)]
+        public void command_ExportGeojson()
+        {
+            Type[] typesToExport = new Type[]
+            {
+                typeof(Polyline), typeof(Line), typeof(Polyline3d), typeof(Hatch), typeof(BlockReference)
+            };
+
+            string[] typesString = typesToExport.Select(t => RXObject.GetClass(t).DxfName).Distinct().ToArray();
+
+            TypedValue[] tmpFilterArgs = new TypedValue[]
+            {
+                new TypedValue((int)DxfCode.Start, string.Join(",", typesString))
+            };
+
+
+
+            PromptSelectionOptions selOpts = new PromptSelectionOptions();
+            selOpts.MessageForAdding = "Выберите экспортируемые объекты";
+
+            SelectionFilter cadFilter = new SelectionFilter(tmpFilterArgs);
+
+            PromptSelectionResult selResult = dwgUtils.CurrentDoc.Editor.GetSelection(selOpts, cadFilter);
+            if (selResult.Status != PromptStatus.OK) return;
+
+            GeoJsonExporter exporter = new GeoJsonExporter();
+            string tmpTargetDir = @"C:\Users\Georg\Documents\GitHub\cadApiDevCourse\tmp";
+            exporter.ExportEntities(new ObjectIdCollection(selResult.Value.GetObjectIds()), tmpTargetDir);
+
         }
     }
 }

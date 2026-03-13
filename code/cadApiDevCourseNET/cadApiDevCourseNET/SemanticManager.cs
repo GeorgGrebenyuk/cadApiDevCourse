@@ -156,7 +156,7 @@ namespace cadApiDevCourseNET
                     Xrecord? propDef = cadTrans.GetObject(propDefRaw.Value, OpenMode.ForRead) as Xrecord;
                     if (propDef == null) continue;
 
-                    ResultBuffer propDefData = propDef.Data;
+                    ResultBuffer propDefData = propDef.XData;
                     if (propDefData == null) continue;
 
                     PropertyDef propDef2 = new PropertyDef();

@@ -17,7 +17,7 @@ namespace cadApiDevCourseNET.UI
     internal class SemanticViewerPalette
     {
         private static PaletteSet? mPaletteSet;
-        private static Guid paletteId = Guid.NewGuid(); // Guid.Parse("{efbb6807-d965-4dfa-a36e-a4a4669066f2}");
+        private static Guid paletteId = Guid.Parse("{efbb6807-d965-4dfa-a36e-a4a4669066f2}"); // Guid.Parse("{efbb6807-d965-4dfa-a36e-a4a4669066f2}");
 
         public static void CreatePalette()
         {
