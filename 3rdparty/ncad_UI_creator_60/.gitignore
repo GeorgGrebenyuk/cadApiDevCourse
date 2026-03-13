@@ -1,0 +1,5 @@
+# ncad_UI_creator compiled files
+*.dll
+*.exe
+*.pdb
+*.json

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ApplicationPackage
+  xmlns="hostApplicationPackage/v01"
+  Name="cadDevCourse"
+ >
+  <Components>
+    <ConfigEntry
+      FileName="cadDevCourseNet_NcUiDef.cfg"
+      FileType="CFG"
+    />
+	<ComponentEntry
+        AppName="cadDevCourse"
+        ModuleName="cadApiDevCourseNET.dll"
+        ModuleType="MGD"
+    />
+  </Components>
+</ApplicationPackage>

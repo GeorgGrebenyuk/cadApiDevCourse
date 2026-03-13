@@ -1,0 +1,4 @@
+Имя команды,Внутреннее имя,Описание,Подпункт,Размер в ленте,RibbonSplitButton
+Импорт GeoJson,CadDevCourse_GeojsonImport,Импортирует группу GeoJSON с атрибутами в модель,Основные команды,LargeWithText,
+Экспорт GeoJson,CadDevCourse_GeojsonExport,Экспортирует объекты в GeoJSON,Основные команды,LargeWithText,
+Показать атрибуты,CadDevCourse_ShowSemantic,Показать палитру с атрибутами,Основные команды,LargeWithText,
