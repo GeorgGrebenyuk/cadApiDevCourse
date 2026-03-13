@@ -87,17 +87,13 @@
 				<PackageReference Include="AutoCAD.NET" Version="24.1.51000">
 					<ExcludeAssets>runtime</ExcludeAssets>
 				</PackageReference>
-				<PackageReference Include="Chuongmep.Acad.Api.Autodesk.AutoCAD.Interop" Version="2024.0.1" >
+				<PackageReference Include="Chuongmep.Acad.Api.Autodesk.AutoCAD.Interop" Version="2024.0.1">
 					<ExcludeAssets>runtime</ExcludeAssets>
 				</PackageReference>
 			</ItemGroup>
 		</When>
 		
 	</Choose>
-
-	<ItemGroup>
-	  
-	</ItemGroup>
 
 
 </Project>

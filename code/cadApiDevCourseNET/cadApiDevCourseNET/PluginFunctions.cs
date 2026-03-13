@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using cadApiDevCourseNET.UI;
 #if NCAD
 using Teigha.Runtime;
 using HostMgd.ApplicationServices;
@@ -52,6 +53,12 @@ namespace cadApiDevCourseNET
 
             dwgUtils.ZoomToObjects();
 
+        }
+
+        [CommandMethod("CadDevCourse_ShowSemantic", CommandFlags.UsePickSet)]
+        public void command_ShowSemantic()
+        {
+            SemanticViewerPalette.CreatePalette();
         }
     }
 }

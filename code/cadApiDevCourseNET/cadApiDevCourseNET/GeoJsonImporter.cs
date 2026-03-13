@@ -31,6 +31,8 @@ namespace cadApiDevCourseNET
             cadDb.Pdmode = 34;
             cadDb.Pdsize = 1;
 
+            var semanticManager = SemanticManager.CreateInstance();
+
             foreach (string gjPath in paths)
             {
                 string jsonRaw = File.ReadAllText(gjPath);
@@ -43,7 +45,10 @@ namespace cadApiDevCourseNET
                     
                 }
 
-                
+                var existedProperties = semanticManager.GetPropertyDefinitions();
+                List<PropertyDef> tmpExistedProperties = existedProperties.ToList();
+
+
 
                 using (Transaction cadTrans = cadDb.TransactionManager.StartTransaction())
                 {
@@ -59,9 +64,37 @@ namespace cadApiDevCourseNET
                     {
                         ObjectIdCollection importedObjects = importObject(feature.Geometry);
 
+                        List<PropertyValue> propValues = new List<PropertyValue>();
+                        foreach (var featurePropDef in feature.Properties)
+                        {
+                            PropertyDef propDef = new PropertyDef()
+                            {
+                                PropDefId = tmpExistedProperties.Count() + 1,
+                                Caption = featurePropDef.Key,
+                                Category = geojsonData.Name
+                            };
+
+                            if (!tmpExistedProperties.Contains(propDef)) tmpExistedProperties.Add(propDef);
+                            else propDef = tmpExistedProperties.Where(p => p.Caption == featurePropDef.Key 
+                                && p.Category == geojsonData.Name).First();
+
+                            PropertyValue propValue = new PropertyValue()
+                            {
+                                PropDefId = propDef.PropDefId,
+                                ValueStr = featurePropDef.Value?.ToString() ?? ""
+                            };
+                            propValues.Add(propValue);
+                        }
+
+
                         foreach (ObjectId objId in importedObjects)
                         {
-                            DBPoint? objAsPoint = cadTrans.GetObject(objId, OpenMode.ForRead) as DBPoint;
+                            DBObject objEntity = cadTrans.GetObject(objId, OpenMode.ForWrite);
+
+                            semanticManager.SaveObjectsProperties(objEntity, cadTrans, propValues.ToArray());
+
+
+                            DBPoint? objAsPoint = cadTrans.GetObject(objId, OpenMode.ForWrite) as DBPoint;
                             if (objAsPoint == null) continue;
 
                             mDwgEntCreator.CreateBlockReference(objAsPoint, feature.Properties, geojsonData.Name);
@@ -70,6 +103,7 @@ namespace cadApiDevCourseNET
 
                     }
 
+                    semanticManager.SavePropDefs(tmpExistedProperties.ToArray());
 
                     cadTrans.Commit();
                 }
