@@ -118,10 +118,11 @@ namespace cadApiDevCourseNET
                         propDefRecordRB.Add(new TypedValue((int)DxfCode.ExtendedDataInteger32, newPropDef.PropDefId));
                         propDefRecordRB.Add(new TypedValue((int)DxfCode.ExtendedDataAsciiString, newPropDef.Caption));
                         propDefRecordRB.Add(new TypedValue((int)DxfCode.ExtendedDataAsciiString, newPropDef.Category));
-                        propDefRecord.XData = propDefRecordRB;
+                        propDefRecord.Data = propDefRecordRB;
                     }
 
                     semanticDict.SetAt($"Property_{propCounter}", propDefRecord);
+                    cadTrans.AddNewlyCreatedDBObject(propDefRecord, true);
                     propCounter++;
                 }
                 cadTrans.Commit();
@@ -156,7 +157,7 @@ namespace cadApiDevCourseNET
                     Xrecord? propDef = cadTrans.GetObject(propDefRaw.Value, OpenMode.ForRead) as Xrecord;
                     if (propDef == null) continue;
 
-                    ResultBuffer propDefData = propDef.XData;
+                    ResultBuffer propDefData = propDef.Data;
                     if (propDefData == null) continue;
 
                     PropertyDef propDef2 = new PropertyDef();
@@ -224,7 +225,7 @@ namespace cadApiDevCourseNET
                     propValueRecordRB.Add(new TypedValue((int)DxfCode.ExtendedDataInteger32, propValue.PropDefId));
                     propValueRecordRB.Add(new TypedValue((int)DxfCode.ExtendedDataAsciiString, propValue.ValueStr));
 
-                    propValueRecord.XData = propValueRecordRB;
+                    propValueRecord.Data = propValueRecordRB;
                 }
 
                 counter++;

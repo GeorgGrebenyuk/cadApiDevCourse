@@ -38,13 +38,16 @@ namespace cadApiDevCourseNET
             CurrentDoc.Editor.Regen();
 
             string zoomCommand = "_ZOOM Г\n";
-#if NCAD
-            nanoCAD.Application app = Application.AcadApplication as nanoCAD.Application;
-            app.ActiveDocument.SendCommand(zoomCommand);
-#else
-            AcadApplication app = Application.AcadApplication as AcadApplication;
-            app.ActiveDocument.SendCommand(zoomCommand);
-#endif
+
+            //CurrentDoc.Editor.Command(new string[] { zoomCommand, "", "", "" });
+//#if NCAD
+//            nanoCAD.Application app = Application.AcadApplication as nanoCAD.Application;
+//            app.ZoomExtents
+//            app.ActiveDocument.SendCommand(zoomCommand);
+//#else
+//            AcadApplication app = Application.AcadApplication as AcadApplication;
+//            app.ActiveDocument.SendCommand(zoomCommand);
+//#endif
         }
     }
 }

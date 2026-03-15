@@ -76,9 +76,10 @@ namespace cadApiDevCourseNET.UI
                 if (!propDefs.Any())
                 {
                     mPropDefs = semanticManager.GetPropertyDefinitions();
+                    propDefs = mPropDefs.Where(p => p.PropDefId == entProp.PropDefId);
+                    if (!propDefs.Any()) continue;
                 }
-                propDefs = mPropDefs.Where(p => p.PropDefId == entProp.PropDefId);
-                if (!propDefs.Any()) continue;
+                
 
                 PropertyToShow prop = new PropertyToShow()
                 {
