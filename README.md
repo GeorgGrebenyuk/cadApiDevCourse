@@ -10,8 +10,8 @@ https://github.com/GeorgGrebenyuk/cadApiDevCourse
 
 См. материалы в `./code/cadApiDevCourseNET`.
 
-Курс размещен на портале, видео доступны на:
+Курс размещен на ресурсах ООО "ТиБиЭс", видео доступны на:
 
-* YoutTube: https://www.youtube.com/watch?v=hKf8QficYXQ&list=PLZqQBic11bOq8NK86OubAppXDsX-xtK_O
+* YouTube: https://youtube.com/playlist?list=PLZqQBic11bOq8NK86OubAppXDsX-xtK_O&si=W3aPDF7x3thT6a22
 
 * VK Video: https://vkvideo.ru/playlist/-219474503_19
